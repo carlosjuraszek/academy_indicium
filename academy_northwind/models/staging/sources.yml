@@ -1,0 +1,22 @@
+version: 2
+
+sources:
+  - name: northwind_etl
+    description: Essa é a fonte de dados do nosso ERP, criada através do Stitch
+    tables:
+      - name: products
+        description: Essa é a tabela de produtos do ERP.
+      - name: employees
+        description: Essa é a tabela de funcionários do ERP.
+      - name: customers
+      - name: suppliers
+      - name: shippers
+      - name: orders
+        columns: 
+        - name: order_id
+          description: Chave primária da tabela de Pedidos do ERP
+          tests:
+          - unique
+          - not_null
+
+      - name: order_details
